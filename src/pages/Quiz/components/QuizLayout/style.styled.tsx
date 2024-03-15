@@ -74,7 +74,6 @@ export const List = styled.li<Props>`
     `}
 
   &:hover {
-    border: 0.125rem solid ${({ theme }) => theme.colors.magenta};
     background-color: ${({ theme }) => theme.colors.deepMagenta};
   }
 `;

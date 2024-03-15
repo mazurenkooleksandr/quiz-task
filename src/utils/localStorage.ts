@@ -3,9 +3,14 @@ type Props = {
   answersId: string[];
 };
 
+export const getLocalStorageData = () => {
+  const quizStorage = localStorage.getItem("quizStorage");
+
+  return quizStorage ? JSON.parse(quizStorage) : [];
+};
+
 export const getIdFromLocalstorage = () => {
-  const storageString = localStorage.getItem("quizStorage");
-  const storage = storageString ? JSON.parse(storageString) : [];
+  const storage = getLocalStorageData();
   const item = storage.find((item: { id: number }) => item.id === 1);
 
   return item ? item.answersId.join() : "en";
